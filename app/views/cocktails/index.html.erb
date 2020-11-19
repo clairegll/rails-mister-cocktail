@@ -1,0 +1,7 @@
+<h1>My Cocktails</h1>
+
+<% @cocktails.each do |c| %>
+  <ul>
+    <li><%= c.name.upcase %></li>
+  </ul>
+<% end %>
