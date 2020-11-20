@@ -1,7 +1,12 @@
-<h1>My Cocktails</h1>
-
-<% @cocktails.each do |c| %>
-  <ul>
-    <li><%= c.name.upcase %></li>
-  </ul>
-<% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1560963689-b5682b6440f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=986&q=80);">
+  <div class="container">
+    <h1>MENU OF COCKTAILS</h1>
+    <p>Please select your favorite cocktail</p>
+        <% @cocktails.each do |cocktail| %>
+          <ul>
+            <li><%= link_to cocktail.name.capitalize, cocktail_path(cocktail) %></li>
+          </ul>
+      <% end %>
+    <%= link_to "Create a cocktail", new_cocktail_path, class: "btn btn-ghost" %>
+  </div>
+</div>
